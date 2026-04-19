@@ -10,14 +10,14 @@ int main() {
         Form f2("GradeInvalid", 0, 50);
         (void)f2;
     } catch (std::exception& e) {
-        std::cout << "Exception: " << e.what() << std::endl;
+        std::cout << "Exception f1: " << e.what() << std::endl;
     }
 
     try {
         Form f3("TooLow", 200, 50);
         (void)f3;
     } catch (std::exception& e) {
-        std::cout << "Exception: " << e.what() << std::endl;
+        std::cout << "Exception f3: " << e.what() << std::endl;
     }
 
     std::cout << "\n=== signForm tests ===" << std::endl;
