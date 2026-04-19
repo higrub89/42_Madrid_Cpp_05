@@ -1,16 +1,16 @@
-# --- IDENTIFICACIÓN ---
-NAME        = form
+
+NAME        = aform
 CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -O3
 RM          = rm -rf
-# --- COLORES ---
+
 GREEN       = \033[0;32m
 YELLOW      = \033[0;33m
 RED         = \033[0;31m
 NC          = \033[0m
-# --- DIRECTORIOS ---
+
 OBJ_DIR     = obj
-# --- FUENTES ---
+
 SRCS        = main.cpp \
               Bureaucrat.cpp \
               AForm.cpp \
@@ -18,7 +18,7 @@ SRCS        = main.cpp \
               RobotomyRequestForm.cpp \
               PresidentialPardonForm.cpp
 OBJS        = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
-# --- REGLAS ---
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -40,4 +40,5 @@ fclean: clean
 	@echo "$(RED)--- DELETED FILE ./$(NAME) ---$(NC)"
 
 re: fclean all
+
 .PHONY: all clean fclean re
