@@ -1,25 +1,40 @@
+# --- IDENTIFICACIÓN ---
 NAME        = form
-
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
-
-SRCS        = main.cpp Bureaucrat.cpp Form.cpp
-OBJS        = $(SRCS:.cpp=.o)
-
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -O3
+RM          = rm -rf
+# --- COLORES ---
+GREEN       = \033[0;32m
+YELLOW      = \033[0;33m
+RED         = \033[0;31m
+NC          = \033[0m
+# --- DIRECTORIOS ---
+OBJ_DIR     = obj
+# --- FUENTES ---
+SRCS        = main.cpp \
+              Bureaucrat.cpp \
+              Form.cpp
+OBJS        = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
+# --- REGLAS ---
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+	@echo "$(YELLOW)--- CREATION ./$(NAME)...$(NC)"
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)✅  SUCCESSFUL COMPILATION  ✅$(NC)"
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: %.cpp Bureaucrat.hpp Form.hpp
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(YELLOW) Compiling:$(NC) $<"
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@$(RM) $(OBJ_DIR)
+	@echo "$(RED)--- DELETION OF OBJECT FILES ---$(NC)"
 
 fclean: clean
-	rm -f $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(RED)--- DELETED FILE ./$(NAME) ---$(NC)"
 
 re: fclean all
-
 .PHONY: all clean fclean re
