@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 21:42:49 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/04/20 21:42:50 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -21,32 +33,25 @@ int main() {
     ShrubberyCreationForm shrub("home");
     std::cout << shrub << std::endl;
     
-    // Try to execute without sign
     boss.executeForm(shrub);
     
-    // Intern signs, but try to execute with intern (too low)
     intern.signForm(shrub);
     intern.executeForm(shrub);
 
-    // Mid executes
     mid.executeForm(shrub);
 
     std::cout << "\n=== RobotomyRequestForm Tests ===" << std::endl;
     RobotomyRequestForm robot("Bender");
     std::cout << robot << std::endl;
 
-    // Intern tries to sign (too low: 145 > 72)
     intern.signForm(robot);
     
-    // Mid signs (50 <= 72)
     mid.signForm(robot);
 
-    // Mid tries to execute (too low: 50 > 45)
     mid.executeForm(robot);
     
-    // Boss executes (1 <= 45)
     boss.executeForm(robot);
-    boss.executeForm(robot); // test randomness 50%
+    boss.executeForm(robot);
     boss.executeForm(robot);
     boss.executeForm(robot);
 
@@ -54,7 +59,6 @@ int main() {
     PresidentialPardonForm pardon("Ford Prefect");
     std::cout << pardon << std::endl;
 
-    // Boss signs and executes
     boss.signForm(pardon);
     boss.executeForm(pardon);
 

@@ -37,4 +37,5 @@ fclean: clean
 	@echo "$(RED)--- DELETED FILE ./$(NAME) ---$(NC)"
 
 re: fclean all
+
 .PHONY: all clean fclean re

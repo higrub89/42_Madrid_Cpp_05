@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 16:47:49 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/04/20 16:47:50 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -28,14 +40,14 @@ int main() {
         std::cout << lowBureau << std::endl;
         std::cout << f << std::endl;
 
-        lowBureau.signForm(f);  // fail — grade too low
+        lowBureau.signForm(f);  
         std::cout << f << std::endl;
 
         Bureaucrat highBureau("Alice", 1);
-        highBureau.signForm(f);  // success
+        highBureau.signForm(f);
         std::cout << f << std::endl;
 
-        highBureau.signForm(f);  // already signed but still valid
+        highBureau.signForm(f);
     } catch (std::exception& e) {
         std::cout << "Unexpected exception: " << e.what() << std::endl;
     }

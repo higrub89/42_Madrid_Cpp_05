@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 21:36:56 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/04/20 21:36:57 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AFORM_HPP
 # define AFORM_HPP
 
@@ -28,8 +40,8 @@ class AForm {
 
         void    beSigned(const Bureaucrat& b);
 
-        virtual void execute(Bureaucrat const & executor) const = 0;
-        void checkExecution(Bureaucrat const & executor) const;
+        virtual void execute(Bureaucrat const& executor) const = 0;
+        void checkExecution(Bureaucrat const& executor) const;
 
         class GradeTooHighException : public std::exception {
         public:

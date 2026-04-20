@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 21:49:36 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/04/20 21:49:37 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 #include <iostream>
@@ -30,7 +42,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     
     std::cout << "* BZZZZZ... DRILL NOISES... *" << std::endl;
     
-    // We can use a simple rand() approach (requires srand to be called in main)
     if (std::rand() % 2 == 0) {
         std::cout << this->_target << " has been robotomized successfully 50% of the time." << std::endl;
     } else {

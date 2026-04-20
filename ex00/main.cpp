@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhiguita <rhiguita@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 16:44:00 by rhiguita          #+#    #+#             */
+/*   Updated: 2026/04/20 17:37:13 by rhiguita         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main() {
@@ -21,7 +33,7 @@ int main() {
 
     std::cout << "\n--- Test 3: Construction with grade too low (151) ---" << std::endl;
     try {
-        Bureaucrat b4("Low", 151);
+        Bureaucrat b4("Low", 149);
         std::cout << b4 << std::endl;
     } catch (std::exception &e) {
         std::cerr << "Caught expected error: " << e.what() << std::endl;
